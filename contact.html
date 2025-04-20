@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cyber Mind Space</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* center form on page */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* stacked inputs */
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #1a1a1a;
+    color: white;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    align-self: stretch; /* ensures it fills the row inside the form */
+    padding: 14px;
+    background: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Cyber Mind Space Logo">
+                    <span>Cyber Mind Space</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title">Contact Us</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 style="text-align: center;">Get In Touch</h2>
+                    <p style="text-align: center;">Have questions or need more information? Fill out the form and we'll get back to you as soon as possible.</p>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <form class="contact-form" action="php/contact_process.php" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    
+
+                    <div class="contact-form">
+                        <form action="php/contact_process.php" method="POST" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="Your email address">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div id="form-message"></div>
+                        </form>
+                    </div>                    
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Our Location</h3>
+                                <p style="margin-bottom: 50px;">123 Cyber Street, Tech City, TC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>Phone Number</h3>
+                                <p style="margin-bottom: 50px;">+91 00000 00000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>Email Address</h3>
+                                <p style="margin-bottom: 50px;">info@cybermindspace.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <!-- This is a placeholder for a map. In a real project, you would integrate Google Maps or another map service here -->
+                <div class="map-placeholder">
+                    <img src="https://via.placeholder.com/1200x400?text=Google+Maps+would+be+integrated+here" alt="Map Location">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Cyber Mind Space Logo">
+                        <span>Cyber Mind Space</span>
+                    </div>
+                    <p>Your trusted partner in cybersecurity education and training.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="resources.html">Resources</a></li>    
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="course-details.php?id=1">Practical Ethical Hacking Course</a></li>
+                        <li><a href="course-details.php?id=2">Instagram Hacking</a></li>
+                        <li><a href="course-details.php?id=3">Wifi Hacking</a></li>
+                        <li><a href="courses.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="icon-location"></i> 123 Cyber Street, Tech City</li>
+                        <li><i class="icon-phone"></i> +91 00000 00000</li>
+                        <li><i class="icon-mail"></i> info@cybermindspace.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyber Mind Space. All rights reserved.</p>
+                <p>Site designed and made by <a href="https://acromatic-technologies.github.io">Acromatic Technologies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // In a real application, you would submit the form to the server
+                    // but for this demo, let's just show a success message
+                    e.preventDefault();
+                    
+                    formMessage.innerHTML = '<div class="success-message">Thanks for contacting us! We\'ll get back to you soon.</div>';
+                    contactForm.reset();
+                    
+                    // Hide the message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.innerHTML = '';
+                    }, 5000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
