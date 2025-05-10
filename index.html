@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Mind Space - Learn Cybersecurity & Hacking</title>
+
+    <!-- SEO Meta Tags for Cyber Mind Space -->
+    <meta name="description" content="Cyber Mind Space offers free and premium cybersecurity courses including ethical hacking, penetration testing, and WiFi/Instagram hacking. Learn from industry experts with hands-on labs and real-world skills.">
+    <meta name="keywords" content="cybersecurity, ethical hacking, penetration testing, wifi hacking, instagram hacking, cyber mind space, hacking courses, learn hacking, cybersecurity training, free hacking videos, online cybersecurity courses">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="Cyber Mind Space - Learn Cybersecurity & Ethical Hacking">
+    <meta property="og:description" content="Master ethical hacking, WiFi and social media security with Cyber Mind Space's expert-led, hands-on video courses. Start learning today for free.">
+    <meta property="og:image" content="https://acromatic-technologies.github.io/assets/cms-logo.jpg">
+    <meta property="og:url" content="https://cybermindspace.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cyber Mind Space - Learn Cybersecurity & Ethical Hacking">
+    <meta name="twitter:description" content="Start your cybersecurity journey with free hacking courses from Cyber Mind Space. Real-world skills, virtual labs, and career-focused training.">
+    <meta name="twitter:image" content="https://acromatic-technologies.github.io/assets/cms-logo.jpg">
+    <meta name="twitter:site" content="@CyberMindSpace">
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://cybermindspace.com/">
+    <link rel="icon" href="https://acromatic-technologies.github.io/assets/cms-logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://acromatic-technologies.github.io/assets/cms-logo.jpg" type="image/x-icon">
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/config.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Cyber Mind Space",
+          "url": "https://cybermindspace.in",
+          "logo": "https://acromatic-technologies.github.io/assets/cms-logo.jpg",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9315157275",
+            "contactType": "customer support",
+            "email": "cybermindspacee@gmail.com"
+          },
+          "sameAs": [
+            "https://t.me/cybermindspace",
+            "https://instagram.com/cyber_mind_space",
+            "https://linkedin.com/in/almadadali",
+            "https://www.youtube.com/@CyberMindSpace"
+          ]
+        }
+    </script> 
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -13,7 +61,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Cyber Mind Space Logo">
+                    <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
                     <span>Cyber Mind Space</span>
                 </a>
             </div>
@@ -27,6 +75,12 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
+            <div class="auth-buttons">
+                <button id="signupButton" class="btn btn-primary" onclick="window.location.href='/signup.html'">Sign Up</button>
+                <button id="signinButton" class="btn btn-outline" onclick="window.location.href='/signin.html'">Sign In</button>
+                <span id="userNameDisplay" class="user-name" onclick="window.location.href='/dashboard.html'"></span>
+                <button id="signoutButton" onclick="signout()" style="display: none;">Sign Out</button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -36,12 +90,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section style="margin-top: 80px" class="hero">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Welcome to Cyber Mind Space</h1>
-                <p>Learn Hacking, Cybersecurity & Digital Defense</p>
+                <h1>Welcome to <br>Cyber Mind Space</h1>
+                <p>Master the Art of Cybersecurity.</p>
                 <a href="courses.html" class="btn btn-primary">Watch Free Video Courses!</a>
             </div>
         </div>
@@ -78,7 +132,7 @@
             <div class="courses-grid">
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Practical Ethical Hacking Course (FREE!)">
+                        <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Practical Ethical Hacking Course (FREE!)">
                     </div>
                     <div class="course-content">
                         <h3>Practical Ethical Hacking Course (FREE!)</h3>
@@ -92,7 +146,7 @@
                 </div>
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Instagram Hacking (FREE!)">
+                        <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Instagram Hacking (FREE!)">
                     </div>
                     <div class="course-content">
                         <h3>Instagram Hacking</h3>
@@ -107,7 +161,7 @@
                 </div>
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Wifi Hackings">
+                        <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Wifi Hackings">
                     </div>
                     <div class="course-content">
                         <h3>Wifi Hacking</h3>
@@ -163,7 +217,7 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <div class="logo">
-                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Cyber Mind Space Logo">
+                        <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
                         <span>Cyber Mind Space</span>
                     </div>
                     <p>Your trusted partner in cybersecurity education and training.</p>
@@ -191,12 +245,22 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li><i class="icon-location"></i> 123 Cyber Street, Tech City</li>
-                        <li><i class="icon-phone"></i> +91 00000 00000</li>
-                        <li><i class="icon-mail"></i> info@cybermindspace.com</li>
+                        <li><i class="icon-phone"></i> +91-9315157275</li>
+                        <li><i class="icon-mail"></i><a href="mailto:cybermindspacee@gmail.com"> cybermindspacee@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                  <li><a href="https://t.me/cybermindspace" target="_blank">Telegram Channel</a></li>
+                  <li><a href="https://t.me/+LJvMwjAE6yA5YWQ1" target="_blank">Telegram Discussion Group</a></li>
+                  <li><a href="https://instagram.com/cyber_mind_space" target="_blank">Instagram</a></li>
+                  <li><a href="https://linkedin.com/in/almadadali" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.youtube.com/@CyberMindSpace" target="_blank">YouTube</a></li>
+                </ul>
+              </div>
+              
             <div class="footer-bottom">
                 <p>&copy; 2025 Cyber Mind Space. All rights reserved.</p>
                 <p>Site designed and made by <a href="https://acromatic-technologies.github.io">Acromatic Technologies</a></p>
@@ -205,5 +269,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
