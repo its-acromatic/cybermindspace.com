@@ -142,6 +142,7 @@ img {
     height: 40px;
     width: 40px;
     margin-right: 10px;
+    border-radius: 50%;
 }
 
 .logo span {
@@ -238,22 +239,36 @@ img {
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
-    .auth-buttons {
-        display: none;
-    }
+    .auth-btn {
+        display: block;
+      }
+    
+      .auth-buttons { /* Remove this if you kept the old div */
+        display: none !important;
+      }
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url(#);
-    background-size: cover;
+    background-image: url('https://acromatic-technologies.github.io/assets/sir.JPG');
+    background-size: 120%;
     background-position: center;
-    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     display: flex;
     align-items: center;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('https://acromatic-technologies.github.io/assets/hcr.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 
 .hero-overlay {
     position: absolute;
@@ -508,41 +523,69 @@ img {
 }
 
 .video-wrapper {
-    position: relative;
     padding: 4rem 1rem;
+    background-color: var(--body-bg);
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--body-bg);
   }
   
-  .video-bg-frame {
-    position: absolute;
-    width: 80%;
+  .video-frame {
+    position: relative;
     max-width: 960px;
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 16px;
-    left: 50%;
-    transform: translateX(-52%) translateY(10px); /* offset for shadow look */
-    z-index: 1;
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.25); /* soft blue glow */
+    width: 100%;
+    aspect-ratio: 16/9;
   }
   
   .video-container {
-    width: 80%;
-    max-width: 960px;
-    z-index: 2;
     position: relative;
+    z-index: 2;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    height: 100%;
   }
   
   .video-container video {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     border-radius: 16px;
+    display: block;
   }
   
+  .video-bg-frame {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    z-index: 1;
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.25);
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-play-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
