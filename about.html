@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Cyber Mind Space</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="js/config.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
+                    <span>Cyber Mind Space</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="mobile-auth" href="/signup.html">Sign Up</a></li>
+                    <li><a class="mobile-auth" href="/signin.html">Sign In</a></li>
+                    <li><span id="userNameDisplay" class="user-name mobile-auth" onclick="window.location.href='/dashboard.html'"></span></li>
+                    <li><button id="signoutButton" onclick="signout()" class="mobile-auth" style="display: none;">Sign Out</button></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <button id="signupButton" class="btn btn-primary" onclick="window.location.href='/signup.html'">Sign Up</button>
+                <button id="signinButton" class="btn btn-outline" onclick="window.location.href='/signin.html'">Sign In</button>
+                <span id="userNameDisplay" class="user-name" onclick="window.location.href='/dashboard.html'"></span>
+                <button id="signoutButton" onclick="signout()" style="display: none;">Sign Out</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section style="background-image: url(https://acromatic-technologies.github.io/assets/cms-written.jpg); background-size: 100%;" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title">About Us</h1>
+                <p style="text-align: center; margin-bottom: 50px;">Learn more about our mission and team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h1 class="section-title" style="margin-top: 50px;">Know Your Tutor</h1>
+                    <h3>Welcome to CyberMindSpace! I am Almadad Ali, a passionate ethical hacker, cybersecurity expert, and tech enthusiast. With deep knowledge in web application security, networking, and ethical hacking, I aim to empower the next generation of cybersecurity professionals. My mission is to make ethical hacking accessible and practical for everyone, from beginners to experts. Join me on this journey to master the art of hacking and secure the digital world.</h3>
+                </div>
+                <div class="about-image">
+                    <img src="https://acromatic-technologies.github.io/assets/sir.JPG" alt="Tutor">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Practical Learning</h3>
+                    <p style="margin-bottom: 50px;">We believe in learning by doing. Our courses emphasize hands-on practice over passive consumption of information.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌐</div>
+                    <h3>Ethical Practice</h3>
+                    <p style="margin-bottom: 50px;">We promote responsible and ethical use of cybersecurity knowledge and skills.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation</h3>
+                    <p style="margin-bottom: 50px;">The cybersecurity landscape evolves rapidly. We stay ahead of trends to provide cutting-edge education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="https://acromatic-technologies.github.io/assets/Acromatic.png" alt="Cyber Mind Space Logo">
+                        <span>Cyber Mind Space</span>
+                    </div>
+                    <p>Your trusted partner in cybersecurity education and training.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="resources.html">Resources</a></li>    
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="course-details.php?id=1">Practical Ethical Hacking Course</a></li>
+                        <li><a href="course-details.php?id=2">Instagram Hacking</a></li>
+                        <li><a href="course-details.php?id=3">Wifi Hacking</a></li>
+                        <li><a href="courses.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="icon-phone"></i> +91-9315157275</li>
+                        <li><i class="icon-mail"></i><a href="mailto:cybermindspacee@gmail.com"> cybermindspacee@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                  <li><a href="https://t.me/cybermindspace" target="_blank">Telegram Channel</a></li>
+                  <li><a href="https://t.me/+LJvMwjAE6yA5YWQ1" target="_blank">Telegram Discussion Group</a></li>
+                  <li><a href="https://instagram.com/cyber_mind_space" target="_blank">Instagram</a></li>
+                  <li><a href="https://x.com/CyberMindSpace" target="_blank">X (Formerly Twitter)</a></li>
+                  <li><a href="https://linkedin.com/in/almadadali" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.youtube.com/@CyberMindSpace" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyber Mind Space. All rights reserved.</p>
+                <p>Site designed and made by <a href="https://acromatic-technologies.github.io">Acromatic Technologies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>

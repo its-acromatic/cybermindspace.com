@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Sign In</title>
+  <script type="module" src="js/config.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/signin.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal center */
+  justify-content: center;   /* vertical center */
+  min-height: 80vh;
+  text-align: center;
+  }
+  </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
+                    <span>Cyber Mind Space</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="mobile-auth" href="/signup.html">Sign Up</a></li>
+                    <li><a class="mobile-auth active" href="/signin.html">Sign In</a></li>
+                    <li><span id="userNameDisplay" class="user-name mobile-auth" onclick="window.location.href='/dashboard.html'"></span></li>
+                    <li><button id="signoutButton" onclick="signout()" class="mobile-auth" style="display: none;">Sign Out</button></li>
+                </ul>
+            </div>  
+            <div class="auth-buttons">
+                <button id="signupButton" class="btn btn-primary" onclick="window.location.href='/signup.html'">Sign Up</button>
+                <button id="signinButton" class="btn btn-outline active" onclick="window.location.href='/signin.html'">Sign In</button>
+                <span id="userNameDisplay" class="user-name" onclick="window.location.href='/dashboard.html'"></span>
+                <button id="signoutButton" onclick="signout()" style="display: none;">Sign Out</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+  <div style="margin-top: 100px;" class="sub">
+  <div class="auth-buttons">
+    <span id="userNameDisplay" class="user-name" onclick="window.location.href='/dashboard.html'"></span>
+    <button id="signoutButton" onclick="signout()" style="display: none;">Sign Out</button>
+  </div>
+
+    <h1>Sign In</h1>
+    <div>
+      <input type="email" id="signinEmail" placeholder="Email"><br><br>
+      <input type="password" id="signinPassword" placeholder="Password"><br><br>
+      <button class="btn-primary" onclick="signin()">Sign In</button>
+      <div id="signinError" class="error-message"></div>
+    </div>
+    <p style="margin-top: 30px;">Don't have an account? <a href="/signup.html">Sign Up</a></p>
+  </div>
+</body>
+</html>

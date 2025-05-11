@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cyber Mind Space</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="js/config.js"></script>
+    <style>
+        .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* center form on page */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* stacked inputs */
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #1a1a1a;
+    color: white;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    align-self: stretch; /* ensures it fills the row inside the form */
+    padding: 14px;
+    background: #00aaff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
+                    <span>Cyber Mind Space</span>
+                </a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a class="mobile-auth" href="/signup.html">Sign Up</a></li>
+                    <li><a class="mobile-auth" href="/signin.html">Sign In</a></li>
+                    <li><span id="userNameDisplay" class="user-name mobile-auth" onclick="window.location.href='/dashboard.html'"></span></li>
+                    <li><button id="signoutButton" onclick="signout()" class="mobile-auth" style="display: none;">Sign Out</button></li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <button id="signupButton" class="btn btn-primary" onclick="window.location.href='/signup.html'">Sign Up</button>
+                <button id="signinButton" class="btn btn-outline" onclick="window.location.href='/signin.html'">Sign In</button>
+                <span id="userNameDisplay" class="user-name" onclick="window.location.href='/dashboard.html'"></span>
+                <button id="signoutButton" onclick="signout()" style="display: none;">Sign Out</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section style="margin-top: 80px" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title">Contact Us</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 style="text-align: center;">Get In Touch</h2>
+                    <p style="text-align: center;">Have questions or need more information? Fill out the form and we'll get back to you as soon as possible.</p>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
+                            </div>
+                            
+                            <div style="margin-top: 20px;" class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="Your email address">
+                            </div>
+                            
+                            <div style="margin-top: 20px;" class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                            </div>
+                            
+                            <div style="margin-top: 20px;" class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div id="form-message"></div>
+                        </form>
+                    </div>                    
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>Phone Number</h3>
+                                <p style="margin-bottom: 50px;">+91-9315157275</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>Email Address</h3>
+                                <p style="margin-bottom: 50px;"><a href="mailto:cybermindspacee@gmail.com">cybermindspacee@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <!-- This is a placeholder for a map. In a real project, you would integrate Google Maps or another map service here -->
+                <div class="map-placeholder">
+                    <img src="https://via.placeholder.com/1200x400?text=Google+Maps+would+be+integrated+here" alt="Map Location">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="https://acromatic-technologies.github.io/assets/cms-logo.jpg" alt="Cyber Mind Space Logo">
+                        <span>Cyber Mind Space</span>
+                    </div>
+                    <p>Your trusted partner in cybersecurity education and training.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="resources.html">Resources</a></li>    
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="course-details.php?id=1">Practical Ethical Hacking Course</a></li>
+                        <li><a href="course-details.php?id=2">Instagram Hacking</a></li>
+                        <li><a href="course-details.php?id=3">Wifi Hacking</a></li>
+                        <li><a href="courses.html">View All</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="icon-phone"></i> +91-9315157275</li>
+                        <li><i class="icon-mail"></i><a href="mailto:cybermindspacee@gmail.com"> cybermindspacee@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Social Media</h3>
+                <ul>
+                  <li><a href="https://t.me/cybermindspace" target="_blank">Telegram Channel</a></li>
+                  <li><a href="https://t.me/+LJvMwjAE6yA5YWQ1" target="_blank">Telegram Discussion Group</a></li>
+                  <li><a href="https://instagram.com/cyber_mind_space" target="_blank">Instagram</a></li>
+                  <li><a href="https://x.com/CyberMindSpace" target="_blank">X (Formerly Twitter)</a></li>
+                  <li><a href="https://linkedin.com/in/almadadali" target="_blank">LinkedIn</a></li>
+                  <li><a href="https://www.youtube.com/@CyberMindSpace" target="_blank">YouTube</a></li>
+                </ul>
+              </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cyber Mind Space. All rights reserved.</p>
+                <p>Site designed and made by <a href="https://acromatic-technologies.github.io">Acromatic Technologies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <!--<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // In a real application, you would submit the form to the server
+                    // but for this demo, let's just show a success message
+                    e.preventDefault();
+                    
+                    formMessage.innerHTML = '<div class="success-message">Thanks for contacting us! We\'ll get back to you soon.</div>';
+                    contactForm.reset();
+                    
+                    // Hide the message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.innerHTML = '';
+                    }, 5000);
+                });
+            }
+        });
+    </script>    -->
+    <!-- अपनी HTML फ़ाइल के <body> टैग के बिल्कुल अंत में, </body> से ठीक पहले -->
+
+<script type="module">
+    // Firebase SDKs से आपको ज़रूरी फंक्शन्स को इम्पोर्ट करें
+    // हमने इसमें Firestore के लिए getFirestore, collection, addDoc, और serverTimestamp को जोड़ा है
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js"; // आपके द्वारा प्रदान किया गया URL
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js"; // आपके द्वारा प्रदान किया गया URL
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js"; // Firestore के लिए URL (यह शायद आपकी Console में अलग से नहीं दिखाया गया होगा, लेकिन इसी वर्जन का उपयोग करें)
+  
+    // आपकी वेब ऐप का Firebase कॉन्फ़िगरेशन (आपके द्वारा प्रदान किया गया)
+    const firebaseConfig = {
+      apiKey: "AIzaSyCF5xmyzDGWYpa20Tri-RAaJ0KCYaQYfe8",
+      authDomain: "cyber-mind-space.firebaseapp.com",
+      projectId: "cyber-mind-space",
+      storageBucket: "cyber-mind-space.firebasestorage.app",
+      messagingSenderId: "999457763481",
+      appId: "1:999457763481:web:82970ecea9787ff8194808",
+      measurementId: "G-8BW4ZX53LX" // Analytics के लिए, अगर ज़रूरी हो
+    };
+  
+    // Firebase को इनिशियलाइज़ करें
+    const firebaseApp = initializeApp(firebaseConfig);
+  
+    // अगर Analytics इनेबल किया है तो इसे इनिशियलाइज़ करें
+    // आप चाहें तो इस लाइन को हटा सकते हैं अगर आपको Analytics नहीं चाहिए फॉर्म सबमिशन के लिए
+    const analytics = getAnalytics(firebaseApp); // आपके द्वारा प्रदान किया गया
+  
+    // **Firestore को इनिशियलाइज़ करें**
+    const db = getFirestore(firebaseApp);
+  
+    // **=== फॉर्म हैंडलिंग कोड यहाँ से शुरू होता है ===**
+  
+    // अपने HTML फॉर्म और मैसेज डिस्प्ले करने वाले div का संदर्भ प्राप्त करें
+    const contactForm = document.getElementById('contactForm');
+    const formMessageDiv = document.getElementById('form-message');
+    const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null; // Null चेक जोड़ा
+  
+    // सुनिश्चित करें कि फॉर्म और बटन मौजूद हैं
+    if (contactForm && formMessageDiv && submitButton) {
+      // फॉर्म सबमिट होने पर क्या करना है, इसके लिए एक इवेंट लिस्नर जोड़ें
+      contactForm.addEventListener('submit', async (event) => { // 'async' का उपयोग Firestore ऑपरेशन के लिए
+        event.preventDefault(); // फॉर्म को पेज रीलोड करने से रोकें
+  
+        // फॉर्म से डेटा प्राप्त करें
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+  
+        // पिछला मैसेज (अगर कोई हो) हटा दें
+        formMessageDiv.textContent = '';
+        formMessageDiv.style.color = ''; // रंग भी रीसेट करें
+  
+        // बटन को थोड़ी देर के लिए डिसेबल करें और टेक्स्ट बदलें
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+  
+        try {
+          // Firestore में 'contactMessages' नाम के कलेक्शन में नया डॉक्यूमेंट जोड़ें
+          // हम मॉड्यूलर फंक्शन्स collection() और addDoc() का उपयोग कर रहे हैं
+          const docRef = await addDoc(collection(db, 'contactMessages'), {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            timestamp: serverTimestamp() // Firestore सर्वर टाइमस्टैंप का उपयोग करें
+          });
+  
+          console.log("Document written with ID: ", docRef.id);
+  
+          // सफलता का मैसेज दिखाएं
+          formMessageDiv.textContent = 'Thanks for contacting us! We\'ll get back to you soon.';
+          formMessageDiv.style.color = 'green';
+  
+          // फॉर्म को खाली करें
+          contactForm.reset();
+  
+        } catch (e) {
+          console.error("Error adding document: ", e);
+  
+          // विफलता का मैसेज दिखाएं
+          formMessageDiv.textContent = 'Sorry, a problem encountered while sending message. Please try again.';
+          formMessageDiv.style.color = 'red';
+  
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
+        }
+      });
+    } else {
+        console.error("Firebase form script: One or more required form elements not found!");
+        if (!contactForm) console.error("Element with ID 'contactForm' not found.");
+        if (!formMessageDiv) console.error("Element with ID 'form-message' not found.");
+        if (!submitButton) console.error("Button with type 'submit' inside form not found.");
+    }
+  </script>
+  
+</body>
+</html>
